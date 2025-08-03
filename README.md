@@ -99,7 +99,7 @@ Here’s how I used it (for maximum re-use, put it in a layout template—mine i
         {{ disqus.commentCount }} Comment{% if disqus.commentCount != 1 %}s{% endif %}
     </h2>
     {% for comment in disqus.comments %}
-        {% include comment-entry.html %}
+        {% include "comment-entry.html" %}
     {% endfor %}
 </div>
 ```
@@ -117,7 +117,7 @@ And then `comment-entry.html` file in `_includes/`:
     </div>
     <div class="static-comments-msg">{{ comment.message }}</div>
     {% for reply in comment.replies %}
-        {% include comment-entry.html, comment: reply %}
+        {% include "comment-entry.html", comment: reply %}
     {% endfor %}
 </div>
 ```
